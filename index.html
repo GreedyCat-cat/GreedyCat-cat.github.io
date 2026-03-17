@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鲜菜食光 FreshTime - 智能厨房管理</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2355B76B%22>🌿</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand-logo">
+            <i class="fas fa-leaf logo-icon-styled"></i>
+            <span class="brand-text">鲜菜<span>食光</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#concept">首页</a>
+            <a href="#features">功能</a>
+            <a href="#screenshots">截图</a>
+            <a href="#stats">数据</a>
+            <a href="#testimonials">评价</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="concept">
+        <div class="ambient-glow"></div>
+
+        <div class="hero-text">
+            <span class="tagline">🚀 现在下载，开始智能生活</span>
+            <h1>鲜菜食光<br>让每一餐都鲜活</h1>
+            <p>连接田间与餐桌的数字桥梁。利用 AI 图像识别与智能保质期算法，为您打造无缝的现代厨房管理体验。</p>
+            
+            <div class="download-section">
+                <a href="assets/FreshLife.apk" class="download-btn android" download>
+                    <i class="fab fa-android" style="font-size:24px;"></i>
+                    <span>下载 Android APK</span>
+                </a>
+                <div class="download-btn ios">
+                    <i class="fab fa-apple" style="font-size:24px;"></i>
+                    <span>iOS 敬请期待</span>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+                <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+                <span>向下探索更多</span>
+            </div>
+        </div>
+        
+        <div class="hero-image-wrapper">
+            <div class="float-card fc-1">
+                <div class="fc-icon"><i class="fas fa-recycle"></i></div>
+                <div>
+                    <div style="font-weight:700; color:var(--brand-dark)">-30%</div>
+                    <div style="font-size:12px; color:#999">减少食物浪费</div>
+                </div>
+            </div>
+            <div class="float-card fc-2" style="bottom:120px; right:-30px; animation-delay:1s;">
+                <div class="fc-icon"><i class="fas fa-clock"></i></div>
+                <div>
+                    <div style="font-weight:700; color:var(--brand-dark)">+50%</div>
+                    <div style="font-size:12px; color:#999">食材利用率</div>
+                </div>
+            </div>
+
+            <div class="phone-mockup">
+                <div class="app-screen">
+                    <div id="main-app" style="display:flex; flex-direction:column; height:100%;">
+                        <div style="padding:44px 20px 10px; display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-weight:800; font-size:18px; color:var(--brand-dark);">FreshLife</span>
+                            <div style="width:32px; height:32px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.05);"><i class="far fa-bell" style="font-size:14px; color:#546E7A;"></i></div>
+                        </div>
+
+                        <main id="tab-home" class="app-scroll-container fade-in">
+                            <div style="padding:16px; background:linear-gradient(135deg, #81C784 0%, #55B76B 100%); border-radius:20px; margin-bottom:20px;">
+                                <h3 style="color:white; font-weight:800; font-size:24px; margin-bottom:4px;">你好，欢迎回来！</h3>
+                                <p style="color:white; opacity:0.9; font-size:16px;">今天想做什么呢？</p>
+                            </div>
+
+                            <div class="app-card" style="padding:18px; margin-bottom:16px; border:1.5px solid #C8E6C9;">
+                                <div style="display:flex; align-items:center; margin-bottom:12px;">
+                                    <div style="padding:10px; background:#E8F5E9; border-radius:14px;">
+                                        <i class="fas fa-notifications-active" style="color:#2E7D32; font-size:22px;"></i>
+                                    </div>
+                                    <div style="margin-left:12px;">
+                                        <div style="font-weight:700; color:#2E7D32; font-size:18px;">库存预警</div>
+                                        <div style="font-size:13px; color:#757575;">共 3 项食材需要关注</div>
+                                    </div>
+                                </div>
+                                <div style="padding:12px; background:#FFF3E0; border-radius:12px; border:1px solid #FFE0B2; margin-bottom:8px;">
+                                    <div style="display:flex; align-items:center;">
+                                        <div style="width:12px; height:12px; background:#FF9800; border-radius:50%; margin-right:12px;"></div>
+                                        <span style="font-size:22px; margin-right:8px;">🥑</span>
+                                        <div>
+                                            <div style="font-weight:700;">牛油果</div>
+                                            <div style="display:flex; gap:8px; margin-top:4px;">
+                                                <span style="background:#FFE082; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; color:#F57F17;">注意</span>
+                                                <span style="font-size:12px; color:#757575;">剩余: 2 个</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding:12px; background:#FFEBEE; border-radius:12px; border:1px solid #FFCDD2;">
+                                    <div style="display:flex; align-items:center;">
+                                        <div style="width:12px; height:12px; background:#F44336; border-radius:50%; margin-right:12px;"></div>
+                                        <span style="font-size:22px; margin-right:8px;">🥛</span>
+                                        <div>
+                                            <div style="font-weight:700;">牛奶</div>
+                                            <div style="display:flex; gap:8px; margin-top:4px;">
+                                                <span style="background:#EF9A9A; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; color:#C62828;">紧急</span>
+                                                <span style="font-size:12px; color:#757575;">剩余: 1 盒</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="padding:24px; background:linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius:16px; margin-bottom:16px;" onclick="alert('跳转至新鲜度检测页面')">
+                                <div style="display:flex; align-items:center;">
+                                    <div style="padding:14px; background:white; border-radius:50%; margin-right:14px;">
+                                        <i class="fas fa-leaf" style="color:#55B76B; font-size:32px;"></i>
+                                    </div>
+                                    <div style="flex:1;">
+                                        <span style="font-size:18px; font-weight:700; color:#37474F;">果蔬新鲜度检测</span>
+                                    </div>
+                                    <i class="fas fa-arrow-forward-ios" style="color:#90A4AE;"></i>
+                                </div>
+                            </div>
+
+                            <div style="padding:24px; background:linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-radius:16px;" onclick="alert('跳转至库存管理页面')">
+                                <div style="display:flex; align-items:center; margin-bottom:16px;">
+                                    <div style="padding:12px; background:white; border-radius:50%; margin-right:12px;">
+                                        <i class="fas fa-inventory-2" style="color:#1976D2; font-size:28px;"></i>
+                                    </div>
+                                    <span style="font-size:20px; font-weight:700; color:#0D47A1;">库存管理</span>
+                                    <i class="fas fa-arrow-forward-ios" style="color:#64B5F6; margin-left:auto;"></i>
+                                </div>
+                                <div style="display:flex; gap:12px;">
+                                    <div style="flex:1; background:white; padding:14px; border-radius:12px; text-align:center;">
+                                        <div style="font-size:28px; font-weight:800; color:#1565C0;">8</div>
+                                        <div style="font-size:12px; color:#757575;">库存食材总数</div>
+                                    </div>
+                                    <div style="flex:1; background:white; padding:14px; border-radius:12px; text-align:center;">
+                                        <div style="font-size:28px; font-weight:800; color:#EF6C00;">3</div>
+                                        <div style="font-size:12px; color:#757575;">预警食材数量</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+
+                        <main id="tab-diet" class="app-scroll-container hidden fade-in">
+                            <h3 style="margin-bottom:16px; font-size:20px; font-weight:800;">饮食记录</h3>
+                            <div class="app-card">
+                                <div style="display:flex; align-items:center; justify-content:center; padding:40px; flex-direction:column;">
+                                    <span style="font-size:48px; margin-bottom:12px;">🍽️</span>
+                                    <p style="color:#78909C; text-align:center;">记录您的每日饮食<br>追踪营养摄入</p>
+                                </div>
+                            </div>
+                        </main>
+
+                        <main id="tab-shopping" class="app-scroll-container hidden fade-in">
+                            <h3 style="margin-bottom:16px; font-size:20px; font-weight:800;">购物清单</h3>
+                            <div class="app-card">
+                                <div style="display:flex; align-items:center; justify-content:center; padding:40px; flex-direction:column;">
+                                    <span style="font-size:48px; margin-bottom:12px;">📋</span>
+                                    <p style="color:#78909C; text-align:center;">管理您的购物清单<br>一键添加所需食材</p>
+                                </div>
+                            </div>
+                        </main>
+
+                        <main id="tab-inventory" class="app-scroll-container hidden fade-in">
+                            <h3 style="margin-bottom:16px; font-size:20px; font-weight:800;">库存管理</h3>
+                            <div style="display:flex; margin-bottom:16px; overflow-x:auto; padding:4px; background:white; border-radius:18px;">
+                                <div class="pill active" style="background:var(--app-primary); color:white;">库存中 (6)</div>
+                                <div class="pill">已用完 (2)</div>
+                            </div>
+                            <div class="app-card" style="display:flex; align-items:center; padding:16px; margin-bottom:10px;">
+                                <div style="width:60px; height:60px; background:#E8F5E9; border-radius:18px; display:flex; align-items:center; justify-content:center; margin-right:12px;">
+                                    <span style="font-size:30px;">🥩</span>
+                                </div>
+                                <div style="flex:1;">
+                                    <div style="font-weight:700; font-size:15px;">西冷牛排</div>
+                                    <div style="display:flex; gap:8px; margin-top:6px;">
+                                        <span style="background:#E8F5E9; color:#2E7D32; padding:4px 10px; border-radius:10px; font-size:11px; font-weight:700;">剩余 300g</span>
+                                        <span style="background:#FFF3E0; color:#F57F17; padding:4px 10px; border-radius:10px; font-size:11px; font-weight:700;">新鲜</span>
+                                    </div>
+                                    <div style="font-size:12px; color:#78909C; margin-top:6px;">保质期至: 2026-04-01</div>
+                                </div>
+                            </div>
+                            <div class="app-card" style="display:flex; align-items:center; padding:16px;">
+                                <div style="width:60px; height:60px; background:#FFF3E0; border-radius:18px; display:flex; align-items:center; justify-content:center; margin-right:12px;">
+                                    <span style="font-size:30px;">🥕</span>
+                                </div>
+                                <div style="flex:1;">
+                                    <div style="font-weight:700; font-size:15px;">胡萝卜</div>
+                                    <div style="display:flex; gap:8px; margin-top:6px;">
+                                        <span style="background:#E8F5E9; color:#2E7D32; padding:4px 10px; border-radius:10px; font-size:11px; font-weight:700;">剩余 5 根</span>
+                                        <span style="background:#FFF3E0; color:#F57F17; padding:4px 10px; border-radius:10px; font-size:11px; font-weight:700;">注意</span>
+                                    </div>
+                                    <div style="font-size:12px; color:#78909C; margin-top:6px;">保质期至: 2026-03-22</div>
+                                </div>
+                            </div>
+                        </main>
+
+                        <main id="tab-recipe" class="app-scroll-container hidden fade-in">
+                            <div style="padding:18px; background:linear-gradient(135deg, #81C784 0%, #55B76B 100%); border-radius:20px; margin-bottom:20px;">
+                                <div style="display:flex; align-items:center;">
+                                    <span style="font-size:28px; margin-right:12px;">🍽️</span>
+                                    <div>
+                                        <div style="color:white; font-weight:800; font-size:22px;">菜谱分类</div>
+                                        <div style="color:white; opacity:0.9; font-size:13px;">探索各种美食做法</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                                <div class="app-card" style="padding:14px; text-align:center; cursor:pointer;" onclick="alert('查看荤菜菜谱')">
+                                    <div style="width:42px; height:42px; background:#E8F5E9; border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                                        <span style="font-size:24px;">🍖</span>
+                                    </div>
+                                    <div style="font-weight:700; color:#2E7D32;">荤菜</div>
+                                    <div style="font-size:10px; background:#C8E6C9; color:#2E7D32; padding:2px 8px; border-radius:6px; display:inline-block; margin-top:4px;">12 道菜</div>
+                                </div>
+                                <div class="app-card" style="padding:14px; text-align:center; cursor:pointer;" onclick="alert('查看素菜菜谱')">
+                                    <div style="width:42px; height:42px; background:#E8F5E9; border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                                        <span style="font-size:24px;">🥗</span>
+                                    </div>
+                                    <div style="font-weight:700; color:#2E7D32;">素菜</div>
+                                    <div style="font-size:10px; background:#C8E6C9; color:#2E7D32; padding:2px 8px; border-radius:6px; display:inline-block; margin-top:4px;">18 道菜</div>
+                                </div>
+                                <div class="app-card" style="padding:14px; text-align:center; cursor:pointer;" onclick="alert('查看汤类菜谱')">
+                                    <div style="width:42px; height:42px; background:#E8F5E9; border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                                        <span style="font-size:24px;">🍲</span>
+                                    </div>
+                                    <div style="font-weight:700; color:#2E7D32;">汤类</div>
+                                    <div style="font-size:10px; background:#C8E6C9; color:#2E7D32; padding:2px 8px; border-radius:6px; display:inline-block; margin-top:4px;">8 道菜</div>
+                                </div>
+                                <div class="app-card" style="padding:14px; text-align:center; cursor:pointer;" onclick="alert('查看主食菜谱')">
+                                    <div style="width:42px; height:42px; background:#E8F5E9; border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 8px;">
+                                        <span style="font-size:24px;">🍚</span>
+                                    </div>
+                                    <div style="font-weight:700; color:#2E7D32;">主食</div>
+                                    <div style="font-size:10px; background:#C8E6C9; color:#2E7D32; padding:2px 8px; border-radius:6px; display:inline-block; margin-top:4px;">10 道菜</div>
+                                </div>
+                            </div>
+                        </main>
+
+                        <main id="tab-community" class="app-scroll-container hidden fade-in">
+                            <h3 style="margin-bottom:16px; font-size:20px; font-weight:800;">社区分享</h3>
+                            <div class="app-card">
+                                <div style="display:flex; align-items:center; justify-content:center; padding:40px; flex-direction:column;">
+                                    <span style="font-size:48px; margin-bottom:12px;">👥</span>
+                                    <p style="color:#78909C; text-align:center;">与社区分享您的美食<br>学习他人的烹饪技巧</p>
+                                </div>
+                            </div>
+                        </main>
+
+                        <div class="ai-fab-wrapper" onclick="alert('🤖 AI助手：\n正在为您规划晚餐...\n推荐：香煎牛排 + 蔬菜沙拉')">
+                            <div class="ai-fab-btn">
+                                <i class="fas fa-magic" style="color:white; font-size:20px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="app-tab-bar">
+                            <div class="app-tab-item active" onclick="app.switchTab('home', this)">
+                                <span style="font-size:22px;">🏠</span>
+                                <span>首页</span>
+                            </div>
+                            <div class="app-tab-item" onclick="app.switchTab('diet', this)">
+                                <span style="font-size:22px;">🍽️</span>
+                                <span>饮食</span>
+                            </div>
+                            <div class="app-tab-item" onclick="app.switchTab('shopping', this)">
+                                <span style="font-size:22px;">📋</span>
+                                <span>清单</span>
+                            </div>
+                            <div class="app-tab-item" onclick="app.switchTab('inventory', this)">
+                                <span style="font-size:22px;">📦</span>
+                                <span>库存</span>
+                            </div>
+                            <div class="app-tab-item" onclick="app.switchTab('recipe', this)">
+                                <span style="font-size:22px;">📖</span>
+                                <span>菜谱</span>
+                            </div>
+                            <div class="app-tab-item" onclick="app.switchTab('community', this)">
+                                <span style="font-size:22px;">👥</span>
+                                <span>社区</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="section-header">
+            <span class="tagline">核心功能</span>
+            <h2 class="section-title">强大的功能，简单的体验</h2>
+            <p style="color:#7F8C8D">基于 Flutter 构建，全方位管理您的厨房生活</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-camera"></i></div>
+                <h3>AI 新鲜度检测</h3>
+                <p style="color:#777; line-height:1.6;">集成 NVIDIA Nemotron 视觉大模型，支持拍照或上传图片，智能识别果蔬种类并评估新鲜度。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-box"></i></div>
+                <h3>智能库存管理</h3>
+                <p style="color:#777; line-height:1.6;">支持库存中/已用完分类管理，动态更新预警等级，红色/黄色/绿色三级预警系统，守护您的新鲜食材。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-book-open"></i></div>
+                <h3>丰富菜谱库</h3>
+                <p style="color:#777; line-height:1.6;">内置多类菜谱分类（荤菜、素菜、汤类、主食等），探索各种美食做法，让每一餐都充满惊喜。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-utensils"></i></div>
+                <h3>饮食记录追踪</h3>
+                <p style="color:#777; line-height:1.6;">记录每日饮食，追踪营养摄入，帮助您养成健康的饮食习惯。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-list-check"></i></div>
+                <h3>购物清单管理</h3>
+                <p style="color:#777; line-height:1.6;">一键管理购物清单，轻松添加所需食材，再也不会忘记购买重要物品。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box"><i class="fas fa-users"></i></div>
+                <h3>社区分享互动</h3>
+                <p style="color:#777; line-height:1.6;">与社区分享您的美食创作，学习他人的烹饪技巧，共同享受美食的乐趣。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="screenshots">
+        <div class="section-header">
+            <span class="tagline">应用截图</span>
+            <h2 class="section-title">直观的界面设计</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:24px; max-width:1200px; margin:0 auto;">
+            <div style="background:white; border-radius:24px; padding:20px; box-shadow:0 10px 40px rgba(0,0,0,0.08);">
+                <div style="background:linear-gradient(135deg, #81C784, #55B76B); border-radius:16px; padding:20px; margin-bottom:16px;">
+                    <span style="font-size:48px;">🏠</span>
+                </div>
+                <h3 style="margin-bottom:8px; font-size:18px;">首页概览</h3>
+                <p style="color:#78909C; font-size:14px;">快速查看库存预警、新鲜度检测入口和库存统计</p>
+            </div>
+            <div style="background:white; border-radius:24px; padding:20px; box-shadow:0 10px 40px rgba(0,0,0,0.08);">
+                <div style="background:linear-gradient(135deg, #64B5F6, #1976D2); border-radius:16px; padding:20px; margin-bottom:16px;">
+                    <span style="font-size:48px;">📦</span>
+                </div>
+                <h3 style="margin-bottom:8px; font-size:18px;">库存管理</h3>
+                <p style="color:#78909C; font-size:14px;">管理您的食材库存，设置保质期和预警等级</p>
+            </div>
+            <div style="background:white; border-radius:24px; padding:20px; box-shadow:0 10px 40px rgba(0,0,0,0.08);">
+                <div style="background:linear-gradient(135deg, #A5D6A7, #4CAF50); border-radius:16px; padding:20px; margin-bottom:16px;">
+                    <span style="font-size:48px;">🥗</span>
+                </div>
+                <h3 style="margin-bottom:8px; font-size:18px;">菜谱推荐</h3>
+                <p style="color:#78909C; font-size:14px;">根据您的库存智能推荐合适的菜谱</p>
+            </div>
+            <div style="background:white; border-radius:24px; padding:20px; box-shadow:0 10px 40px rgba(0,0,0,0.08);">
+                <div style="background:linear-gradient(135deg, #FFAB91, #FF5722); border-radius:16px; padding:20px; margin-bottom:16px;">
+                    <span style="font-size:48px;">📷</span>
+                </div>
+                <h3 style="margin-bottom:8px; font-size:18px;">AI 检测</h3>
+                <p style="color:#78909C; font-size:14px;">拍照识别果蔬并智能评估新鲜度</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section stats-section" id="stats" style="background:linear-gradient(135deg, #55B76B 0%, #388E3C 100%);">
+        <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:40px;">
+            <div style="text-align:center; color:white;">
+                <div style="font-size:64px; font-weight:800; margin-bottom:8px;">10K+</div>
+                <div style="font-size:18px; opacity:0.9;">活跃用户</div>
+            </div>
+            <div style="text-align:center; color:white;">
+                <div style="font-size:64px; font-weight:800; margin-bottom:8px;">50K+</div>
+                <div style="font-size:18px; opacity:0.9;">食材管理</div>
+            </div>
+            <div style="text-align:center; color:white;">
+                <div style="font-size:64px; font-weight:800; margin-bottom:8px;">-30%</div>
+                <div style="font-size:18px; opacity:0.9;">食物浪费</div>
+            </div>
+            <div style="text-align:center; color:white;">
+                <div style="font-size:64px; font-weight:800; margin-bottom:8px;">4.8</div>
+                <div style="font-size:18px; opacity:0.9;">用户评分</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="testimonials">
+        <div class="section-header">
+            <span class="tagline">用户评价</span>
+            <h2 class="section-title">他们都在用鲜菜食光</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; max-width:1200px; margin:0 auto;">
+            <div class="feature-card">
+                <div style="display:flex; gap:12px; margin-bottom:16px;">
+                    <div style="width:56px; height:56px; background:#E8F5E9; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px;">👩</div>
+                    <div>
+                        <div style="font-weight:700; font-size:16px;">小厨娘</div>
+                        <div style="color:#FFD700;">★★★★★</div>
+                    </div>
+                </div>
+                <p style="color:#777; line-height:1.6;">自从用了鲜菜食光，再也不用担心食材过期了！预警功能太实用了。</p>
+            </div>
+            <div class="feature-card">
+                <div style="display:flex; gap:12px; margin-bottom:16px;">
+                    <div style="width:56px; height:56px; background:#E3F2FD; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px;">👨</div>
+                    <div>
+                        <div style="font-weight:700; font-size:16px;">美食家</div>
+                        <div style="color:#FFD700;">★★★★★</div>
+                    </div>
+                </div>
+                <p style="color:#777; line-height:1.6;">AI 新鲜度检测太神奇了！拍照就能知道果蔬新不新鲜，非常方便。</p>
+            </div>
+            <div class="feature-card">
+                <div style="display:flex; gap:12px; margin-bottom:16px;">
+                    <div style="width:56px; height:56px; background:#FFF3E0; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px;">🧑</div>
+                    <div>
+                        <div style="font-weight:700; font-size:16px;">环保达人</div>
+                        <div style="color:#FFD700;">★★★★★</div>
+                    </div>
+                </div>
+                <p style="color:#777; line-height:1.6;">通过这个 app 减少了很多食物浪费，感觉为环保出了一份力！</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section showcase">
+        <div class="showcase-img">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80" alt="健康生活">
+        </div>
+        <div class="showcase-text">
+            <span class="tagline">健康与环保</span>
+            <h2 class="section-title">不仅仅是工具</h2>
+            <p style="margin-bottom:1.5rem; color:#7F8C8D; line-height:1.8;">本设计旨在探索"数字技术"与"可持续生活"的结合点。通过量化家庭食物浪费数据，培养用户更环保的消费习惯。</p>
+            <ul class="check-list">
+                <li><i class="fas fa-check-circle"></i> 可视化数据周报</li>
+                <li><i class="fas fa-check-circle"></i> 碳足迹计算追踪</li>
+                <li><i class="fas fa-check-circle"></i> 社区互助共享</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" style="text-align:center; background:linear-gradient(135deg, #F9FCFA 0%, #FFFFFF 100%);">
+        <div class="section-header" style="margin-bottom:3rem;">
+            <span class="tagline">立即开始</span>
+            <h2 class="section-title">下载鲜菜食光，开启智能厨房</h2>
+        </div>
+        <div class="download-section" style="justify-content:center;">
+            <a href="assets/FreshLife.apk" class="download-btn android" download>
+                <i class="fab fa-android" style="font-size:24px;"></i>
+                <span>下载 Android APK</span>
+            </a>
+            <div class="download-btn ios">
+                <i class="fab fa-apple" style="font-size:24px;"></i>
+                <span>iOS 敬请期待</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="brand-logo" style="justify-content:center; margin-bottom:1rem;">
+            <i class="fas fa-leaf logo-icon-styled"></i>
+            <span class="brand-text">鲜菜<span>食光</span></span>
+        </div>
+        <p style="color:#B0BEC5; font-size:0.85rem;">2026 Graduation Project Design. By Soren.</p>
+        <p style="color:#B0BEC5; font-size:0.85rem;">仅作个人展示，非商业用途</p>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
